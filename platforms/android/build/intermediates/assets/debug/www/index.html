@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://griffis.edumedia.ca 'unsafe-eval';connect-src http://griffis.edumedia.ca;">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="font/css/iconic-glyphs.css">
+        <title>Tabi0011</title>
+    </head>
+    
+    <body>
+        
+        <div id="gameresults" class="page active" data-role="page">
+            <header>
+                <h1>Schedule</h1>
+                <span id="refreshR" class="iconic iconic-md" data-glyph="loop-circular" title="loop circular" aria-hidden="true"></span>
+            </header>
+            <ul class="results_list">
+                
+            </ul>
+        </div>
+
+        <div id="standings" class="page" data-role="page">
+            <header>
+                <h1>Standings</h1>
+                <span id="refreshS" class="iconic iconic-md" data-glyph="loop-circular" title="loop circular" aria-hidden="true"></span>
+            </header>
+            <section class="main">
+            <table id="teamStandings">
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>T</th>
+                    <th>P</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- load the standings here after calculating them -->
+
+            </tbody>
+            </table>
+            </section>
+        </div>
+        <section data-role="nav" id="nav">
+            <ul class="tabs">              
+                <li><span id="navicon" class="iconic iconic-md" data-glyph="calendar" title="calendar" aria-hidden="true"></span><a id="nav_gameresults" href="#gameresults">Schedule</a></li>
+                <li><span id="navicon" class="iconic iconic-md" data-glyph="vertical-align-bottom" title="vertical align bottom" aria-hidden="true"></span><a id="nav_standings" href="#standings">Standings</a></li>
+            </ul>
+        </section>
+    </body>
+    
+    <footer>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </footer>
+</html>
+
+
